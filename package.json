@@ -1,0 +1,68 @@
+{
+  "name": "fs-x-platform",
+  "version": "0.0.1",
+  "author": "Roger Beckers",
+  "private": true,
+  "scripts": {
+    "dev": "nf start",
+    "start": "ionic-app-scripts serve",
+    "electron dist": "electron .",
+    "build-windows": "ionic build --prod --release && build -w",
+    "build-linux": "ionic build --prod --release && build -l",
+    "build-mac": "ionic build --prod --release && build -m",
+    "build-all": "ionic build --prod --release && build -w && build -l && build -m",
+    "clean": "ionic-app-scripts clean",
+    "build": "ionic-app-scripts build",
+    "lint": "ionic-app-scripts lint",
+    "ionic:build": "ionic-app-scripts build",
+    "ionic:serve": "ionic-app-scripts serve"
+  },
+  "dependencies": {
+    "@angular/common": "5.0.3",
+    "@angular/compiler": "5.0.3",
+    "@angular/compiler-cli": "5.0.3",
+    "@angular/core": "5.0.3",
+    "@angular/forms": "5.0.3",
+    "@angular/http": "5.0.3",
+    "@angular/platform-browser": "5.0.3",
+    "@angular/platform-browser-dynamic": "5.0.3",
+    "@ionic-native/core": "4.4.0",
+    "@ionic-native/splash-screen": "4.4.0",
+    "@ionic-native/status-bar": "4.4.0",
+    "@ionic/storage": "2.1.3",
+    "ionic-angular": "3.9.2",
+    "ionicons": "3.0.0",
+    "rxjs": "5.5.2",
+    "sw-toolbox": "3.6.0",
+    "zone.js": "0.8.18"
+  },
+  "devDependencies": {
+    "@ionic/app-scripts": "3.1.6",
+    "electron": "^1.7.10",
+    "electron-builder": "^19.56.2",
+    "foreman": "^2.0.0",
+    "typescript": "2.4.2"
+  },
+  "description": "Template Fullstack X-Platform Desktop App, based on ionic, electron, dotnet core and sqlite",
+  "build": {
+    "appId": "nl.rbeckers.fs-x-platform",
+    "electronVersion": "1.7.10",
+    "asar": true,
+    "files": [
+      "www/**/*",
+      "electron/*"
+    ],
+    "extraResources": {
+      "from": "api/",
+      "to": "app/api/",
+      "filter": [
+        "**/*"
+      ]
+    }
+  },
+  "main": "electron/electron.js",
+  "config": {
+    "ionic_bundler": "webpack",
+    "ionic_webpack": "./config/webpack.config.js"
+  }
+}
