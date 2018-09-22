@@ -11,6 +11,8 @@
 
 # User-specific files (MonoDevelop/Xamarin Studio)
 *.userprefs
+# Front-end
+node_modules/
 
 # Build results
 [Dd]ebug/
